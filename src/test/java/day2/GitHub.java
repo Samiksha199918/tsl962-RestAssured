@@ -16,12 +16,12 @@ public class GitHub {
 	@BeforeTest
 	public void beforeTest() {
 		baseURI="https://api.github.com/user/repos";
-		authentication=RestAssured.oauth2("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");
+		authentication=RestAssured.oauth2("$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#");
 	}
   @Test(enabled=false)
   public void gettingAllRepository() {
 	  given().auth()
-	  .oauth2("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")
+	  .oauth2("$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#")
 	  .when()
 	  .get("https://api.github.com/user/repos")
 	  .then()
@@ -38,7 +38,7 @@ public class GitHub {
 	  
 	  given()
 	  .auth()
-	  .oauth2("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")
+	  .oauth2("$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#")
 	  .header("Content-Type","application/json")
 	  .body(data.toJSONString())
 	  .when()
